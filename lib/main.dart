@@ -1,41 +1,28 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  // runApp(const MyApp());
+
+  // const app = MaterialApp(title: "หัวข้อ", home:
+  // runApp(app);
+
+  runApp(
+    MaterialApp(
+      title: "หัวข้อ",
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("หัวข้อ"),
+          backgroundColor: Colors.pinkAccent,
+          centerTitle: true,
+        ), // AppBar
+        body: Home(),
+      ), // Scaffold
+    ), // MaterialApp
+  );
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'หัวข้อ',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class Home extends StatelessWidget {
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
