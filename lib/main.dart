@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screen/home.dart'; 
-
+import 'screen/item.dart';
 void main() {
   runApp(
     MaterialApp(
@@ -11,7 +11,7 @@ void main() {
           backgroundColor: Colors.pinkAccent,
           centerTitle: true,
         ),
-        body: const Home(), 
+        body: Item(), 
       ),
     ),
   );
