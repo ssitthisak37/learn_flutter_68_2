@@ -1,79 +1,53 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter/src/widgets/framework.dart';
-class Item extends StatefulWidget {
-  const Item({super.key});
+import 'package:learn_flutter_68_2/model/person.dart';
+
+class Item extends StatefulWidget{
+  const Item ({super.key});
 
   @override
   State<Item> createState() => _ItemState();
-
 }
-
-class _ItemState extends State<Item>{
-    int quantity = 10;
-
-    void add() {
-      setState(() {
-        quantity++;
-      });
-    }
-
-    void remove() {
-      setState(() {
-        // quantity--;
-        quantity = quantity > 0 ? quantity - 1 : 0;
-      });
-    }
-    List data = ["สมชาย", "สมศรี", "สมปอง", "สมหมาย", "สมจิตร"];
-
-    @override
-    Widget build(BuildContext context) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "จำนวนสินค้า: $quantity",
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton(
-                  onPressed: add,
-                  child: Text("เพิ่ม"),
-                ),
-                SizedBox(width: 20),
-                ElevatedButton(
-                  onPressed: remove,
-                  child: Text("ลด"),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
-                itemCount: data.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                    padding: EdgeInsets.all(40),
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.purpleAccent),
-                      borderRadius: BorderRadius.circular(10),
+  class _ItemState extends State<Item> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: people.length,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.purpleAccent),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "ชื่อ: ${people[index].name}",
+                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
-                    child: Text(
-                      data[index],
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    Text(
+                      "อายุ: ${people[index].age} ปี",
+                      style: const TextStyle(fontSize: 18),
                     ),
-                  );
-                },
+                    Text(
+                      "อาชีพ: ${people[index].job}",
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-      );
-    }
-
+              const Icon(Icons.person, size: 50, color: Colors.purpleAccent),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
