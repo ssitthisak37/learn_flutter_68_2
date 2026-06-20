@@ -8,46 +8,40 @@ class Item extends StatefulWidget{
   @override
   State<Item> createState() => _ItemState();
 }
-  class _ItemState extends State<Item> {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: people.length,
-      itemBuilder: (context, index) {
-        return Container(
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.purpleAccent),
-            borderRadius: BorderRadius.circular(10),
-          ),
-          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          padding: const EdgeInsets.all(20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Column(
+  class _ItemState extends State<Item>{
+
+
+    @override
+    Widget build(BuildContext context) {
+      return ListView.builder(
+        itemCount: people.length,
+        itemBuilder: (context, index){
+          return Container(
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.purpleAccent),
+              borderRadius: BorderRadius.circular(10),
+              color: people[index].job.color,
+            ),
+            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+            padding: EdgeInsets.all(40),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "ชื่อ: ${people[index].name}",
-                      style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "อายุ: ${people[index].age} ปี",
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                    Text(
-                      "อาชีพ: ${people[index].job}",
-                      style: const TextStyle(fontSize: 18),
+                    Text("ชื่อ: ${people[index].name}",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                    Text("อายุ: ${people[index].age} ปี",
+                    style: TextStyle(fontSize: 18),),
+                    Text("อาชีพ: \\${people[index].job.title}",
+                      style: TextStyle(fontSize: 18),
                     ),
                   ],
                 ),
-              ),
-              const Icon(Icons.person, size: 50, color: Colors.purpleAccent),
-            ],
-          ),
-        );
-      },
-    );
-  }
-}
+                Icon(Icons.person, size: 50, color: Colors.purpleAccent),
+                Image.asset
+                (people[index].job.image, width: 50, height: 50, fit: BoxFit.cover,),
+              ],
+            ),
+          );
