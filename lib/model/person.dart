@@ -5,38 +5,33 @@ enum Job {
   developer(
     title: "นักพัฒนา",
     description: "ทำงานเกี่ยวกับการพัฒนาแอปพลีเคชั่นและซอฟต์แวร์",
-    image: "assets/imaeges/tung.jpg",
+    image: "assets/images/ga_y.jpg",
     color: Colors.purpleAccent,
   ),
   designer(
     title: "นักออกแบบ",
     description: "ทำงานเกี่ยวกับการออกแบบกราฟิกและประสบการณ์ผู้ใช้",
-    image: "assets/imaeges/tung.jpg",
+    image: "assets/images/ga_y.jpg",
     color: Colors.pinkAccent,
   ),
   teacher(
     title: "ครู",
     description: "ทำงานเกี่ยวกับการสอนและการให้ความรู้",
-    image: "assets/imaeges/tung.jpg",
+    image: "assets/images/ga_y.jpg",
     color: Colors.blueAccent,
   ),
   doctor(
     title: "แพทย์",
     description: "ทำงานเกี่ยวกับการดูแลสุขภาพและการรักษาโรค",
-    image: "assets/imaeges/tung.jpg",
+    image: "assets/images/ga_y.jpg",
     color: Colors.greenAccent,
   ),
   lawyer(
     title: "ทนายความ",
     description: "ทำงานเกี่ยวกับการให้คำปรึกษาทางกฎหมายและการเป็นตัวแทนในศาล",
-    image: "assets/imaeges/tung.jpg",
+    image: "assets/images/ga_y.jpg",
     color: Colors.orangeAccent,
   );
-
-  final String title;
-  final String description;
-  final String image;
-  final Color color;
 
   const Job({
     required this.title,
@@ -44,12 +39,13 @@ enum Job {
     required this.image,
     required this.color,
   });
+  final String title;
+  final String description;
+  final String image;
+  final Color color;
 }
 
 class Person {
-  String name;
-  int age;
-  String job;
    String name;
    int age;
    Job job;
@@ -58,11 +54,6 @@ class Person {
 }
 
 List<Person> people = [
-  Person(name: "สมชาย", age: 30, job: "นักเรียน"),
-  Person(name: "สมศรี", age: 25, job: "นักออกแบบ"),
-  Person(name: "สมปอง", age: 40, job: "หมอ"),
-  Person(name: "สมหมาย", age: 35, job: "วิศวกร"),
-  Person(name: "สมจิตร", age: 28, job: "นักธุรกิจ"),
   Person(name: "สมชาย", age: 20, job: Job.developer),
   Person(name: "สมศรี", age: 25, job: Job.designer),
   Person(name: "สมปอง", age: 30, job: Job.teacher),

@@ -1,47 +1,64 @@
 import 'package:flutter/material.dart';
-
 import 'package:learn_flutter_68_2/model/person.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class Item extends StatefulWidget{
-  const Item ({super.key});
+class Item extends StatefulWidget {
+  const Item({super.key});
 
   @override
   State<Item> createState() => _ItemState();
 }
-  class _ItemState extends State<Item>{
 
-
-    @override
-    Widget build(BuildContext context) {
-      return ListView.builder(
-        itemCount: people.length,
-        itemBuilder: (context, index){
-          return Container(
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.purpleAccent),
-              borderRadius: BorderRadius.circular(10),
-              color: people[index].job.color,
-            ),
-            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-            padding: EdgeInsets.all(40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
+class _ItemState extends State<Item> {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemCount: people.length,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: people[index].job.color,
+          ),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            children: [
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("ชื่อ: ${people[index].name}",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-                    Text("อายุ: ${people[index].age} ปี",
-                    style: TextStyle(fontSize: 18),),
-                    Text("อาชีพ: \\${people[index].job.title}",
-                      style: TextStyle(fontSize: 18),
+                    Text(
+                      "ชื่อ: ${people[index].name}",
+                      style: GoogleFonts.kanit(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "อายุ: ${people[index].age} ปี",
+                      style: GoogleFonts.kanit(fontSize: 18),
+                    ),
+                    Text(
+                      "อาชีพ: ${people[index].job.title}",
+                      style: GoogleFonts.kanit(fontSize: 18),
                     ),
                   ],
                 ),
-                Icon(Icons.person, size: 50, color: Colors.purpleAccent),
-                Image.asset
-                (people[index].job.image, width: 50, height: 50, fit: BoxFit.cover,),
-              ],
-            ),
-          );
+              ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  people[index].job.image,
+                  width: 70,
+                  height: 70,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+}
