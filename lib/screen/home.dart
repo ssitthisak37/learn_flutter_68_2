@@ -48,6 +48,20 @@ class Home extends StatelessWidget {
               "กดปุ่มนี้",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+          ),
+          const SizedBox(height: 20), // เพิ่มระยะห่างระหว่างปุ่ม
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.yellowAccent,
+              foregroundColor: Colors.white,
+            ),
+            onPressed: () {
+              print("กดปุ่มแล้ว ElevatedButton");
+            },
+            child: Text(
+              "กดปุ่มนี้",
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ), 
           )
         ],
       ) ,// Column
