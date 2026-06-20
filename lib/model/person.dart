@@ -5,31 +5,31 @@ enum Job {
   developer(
     title: "นักพัฒนา",
     description: "ทำงานเกี่ยวกับการพัฒนาแอปพลีเคชั่นและซอฟต์แวร์",
-    image: "assets/images/ga_y.jpg",
+    image: "assets/images/Po.jpg",
     color: Colors.purpleAccent,
   ),
   designer(
     title: "นักออกแบบ",
     description: "ทำงานเกี่ยวกับการออกแบบกราฟิกและประสบการณ์ผู้ใช้",
-    image: "assets/images/ga_y.jpg",
+    image: "assets/images/Po.jpg",
     color: Colors.pinkAccent,
   ),
   teacher(
     title: "ครู",
     description: "ทำงานเกี่ยวกับการสอนและการให้ความรู้",
-    image: "assets/images/ga_y.jpg",
+    image: "assets/images/Po.jpg",
     color: Colors.blueAccent,
   ),
   doctor(
     title: "แพทย์",
     description: "ทำงานเกี่ยวกับการดูแลสุขภาพและการรักษาโรค",
-    image: "assets/images/ga_y.jpg",
+    image: "assets/images/Po.jpg",
     color: Colors.greenAccent,
   ),
   lawyer(
     title: "ทนายความ",
     description: "ทำงานเกี่ยวกับการให้คำปรึกษาทางกฎหมายและการเป็นตัวแทนในศาล",
-    image: "assets/images/ga_y.jpg",
+    image: "assets/images/Po.jpg",
     color: Colors.orangeAccent,
   );
 

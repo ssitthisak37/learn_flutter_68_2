@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
-import 'screen/home.dart'; 
-import 'screen/item.dart';
+import 'package:learn_flutter_68_2/screen/addForm.dart';
+
 void main() {
-  runApp(
-    MaterialApp(
-      title: "หัวข้อ",
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("หัวข้อ"),
-          backgroundColor: Colors.pinkAccent,
-          centerTitle: true,
-        ),
-        body: Item(), 
-      ),
-    ),
-  );
+  //const app = MaterialApp(title: 'หัวข้อ', home: Text(("Hello World")));
+  //runApp(app);
+
+  // runApp(
+  //   MaterialApp(
+  //     title: "หัวข้อ",
+  //     home: Scaffold(
+  //       appBar: AppBar(
+  //         title: const Text("หัวข้อ"),
+  //         backgroundColor: Colors.pinkAccent,
+  //         centerTitle: true,
+  //       ), // AppBar
+  //       body: Item(),
+  //     ), // Scaffold
+  //   ), // MaterialApp
+  // );
+  runApp(AddForm());  
 }
